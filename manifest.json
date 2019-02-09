@@ -1,0 +1,22 @@
+{
+    "name": "Plex Download",
+    "description": "Download the currently selected media item from Plex",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": "icon.png",
+        "default_title": "Download Plex Media"
+    },
+    "manifest_version": 2
+}
