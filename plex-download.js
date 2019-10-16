@@ -26,11 +26,11 @@
         _getMediaInfo() {
             const mediaIdStr = decodeURIComponent(this.location.hash);
             const mediaIdSpl = mediaIdStr.split('/');
-            const users = JSON.parse(window.localStorage.users).users;
-            const serverInfo = users.find(d => d.authToken === window.localStorage.myPlexAccessToken)
+            const users = JSON.parse(this.localStorage.users).users;
+            const serverInfo = users.find(d => d.authToken === this.localStorage.myPlexAccessToken)
                 .servers.find(d => d.machineIdentifier === mediaIdSpl[2]);
             return {
-                mediaId: mediaIdSpl[mediaIdSpl.length - 1],
+                mediaId: mediaIdSpl[mediaIdSpl.length - 1].split('&')[0],
                 plexToken: serverInfo.accessToken,
                 plexServerUris: serverInfo.connections.map(d => d.uri)
             };
