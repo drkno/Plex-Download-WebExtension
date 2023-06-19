@@ -1,5 +1,8 @@
 (async() => {
-    if (document.querySelectorAll('div[class*="PrePlayDetailsGroupItem-label"]').length < 2) {
+    if (document.querySelector('[data-testid="preplay-play"]') === null &&
+        document.querySelector('.item-duration') == null &&
+        document.querySelector('li.poster-item.season') == null &&
+        document.body.querySelector('.download-btn.secondary-only') === null) {
         alert('No plex media file could be found.');
         return;
     }
